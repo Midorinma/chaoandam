@@ -226,4 +226,7 @@
         top: 16% !important;
         right: 12% !important;
     }
+    .ph{
+        display: none;
+    }
 }
