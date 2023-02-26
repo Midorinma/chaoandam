@@ -408,7 +408,7 @@ input[type=text], input[type=password] {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4);
     padding-top: 50px;
-    
+    overflow: auto;
   }
   
   
