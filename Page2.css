@@ -226,7 +226,15 @@
         top: 16% !important;
         right: 12% !important;
     }
+    /*San phẩm*/
     .ph{
         display: none;
+    }
+    /*footer*/
+    .content-company{
+        grid-template-columns: none;
+    }
+    .cty{
+        margin: 10px 0 10px;
     }
 }
