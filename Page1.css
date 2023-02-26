@@ -296,8 +296,9 @@ input[type=text], input[type=password] {
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
+    max-width: 100%;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: auto; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -307,7 +308,8 @@ input[type=text], input[type=password] {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+    max-width:100%; /* Could be more or less, depending on screen size */
+    width: auto;
   }
 
 .close {
