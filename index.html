@@ -1,0 +1,1392 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Page1.css" rel="stylesheet"/>
+    <link href="Page2.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/2.0.0/css/font-awesome-ie7.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.0/css/font-awesome-ie7.css"/>
+    <title>
+        Cháo ăn dặm Matsuya - sản phẩm được các bà mẹ Nhật tin dùng- Công ty Matsuya			
+    </title>
+</head>
+<body>
+<header>
+        <nav class="information">
+            <div class="sdt_email">
+                <a class="sdt" href="#" title="Số điện thoại"><i class="fa-solid fa-phone"></i> +0916 434 429</a><label>    |</label>
+                <a  class="email" href="#" title="email"><i class="fa-regular fa-envelope"></i> info@lemay.com.vn</a>
+            </div>
+            <div class="dangnhap_dangky">
+                <a class="dn" href="#" title="Đăng nhập" onclick="document.getElementById('id01').style.display='block'"
+                ><i class="fa-solid fa-unlock"></i> Đăng nhập</a>
+                <a  class="dk" href="#" title="Đăng kí" onclick="document.getElementById('id02').style.display='block'"
+                ><i class="fa-solid fa-user"></i> Đăng ký</a>
+            </div>
+        </nav>
+        <div class="img_tieude">
+            <h1 class="logo">
+                <a href="#"><img  class="site-logo" src="image/logo.webp"/></a>
+            </h1>
+            <h1 class="anhbia">
+                <a href="#"><img class="main-logo" src="image/bannerhead.webp"/></a>
+            </h1>
+        </div>
+        <div class="bg">
+        <nav class="menu">
+            <ul class="topnav" id="myTopnav">
+                <li><a href="#" class="tablinks" onclick="openCity(event, 'Trangchu')" id="normal">trang chủ</a></li>
+                <li><a href="#" class="tablinks" onclick="openCity(event, 'Gioithieu')">giới thiệu</a></li>
+                <li class="vd1"><a href="#" id="vd2" class="tablinks" onclick="openCity(event, 'Sanpham')">sản phẩm 
+                    <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="vd3">
+                        <a href="#" class="tablinks" onclick="openCity(event, 'Chaoandam')">cháo ăn dặm</a>
+                    </div>
+                </li>
+                <li><a href="#" class="tablinks" onclick="openCity(event, 'Andamchobe')">ăn dặm cho bé</a></li>
+                <li><a href="#" class="tablinks" onclick="openCity(event, 'Cauhoithuonggap')">câu hỏi thường gặp</a></li>
+                <li><a href="#" class="tablinks" onclick="openCity(event, 'Tintuc')">tin tức</a></li>
+                <li><a href="#" class="tablinks" onclick="openCity(event, 'Lienhe')">liên hệ</a></li>
+                <li><a href="#" style="font-size: 15px; color: black;" class="icon" onclick="navbar()">&#9776;</a></li>
+            </ul>
+            <div class="search">
+                <a href="#" onclick="timkiem()"><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: white;"></i></a>
+            </div>
+            <div class="search-post">
+                <div class="searchfromtop" style="display: block;">
+                    <div  id="search-form">
+                        <input id="tk" name="query" class="form-control" type="text" placeholder="Nhập từ khóa tìm kiếm" maxlength="70" onkeyup="search()"/>
+                        <button type="submit" class="btn sb" onclick="openCity(event, 'search-result')">Search</button>
+                    </div>
+                    <a href="#" class="exit" onclick="thoat()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!--Login form-->
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+    <!-- Modal Content -->
+    <form class="modal-content animate" action="/action_page.php">
+    <div class="container-tieude">
+        <h3>ĐĂNG NHẬP</h3>
+        <p>Nếu bạn có một tài khoản, xin vui lòng đăng nhập:</p>
+    </div>
+
+    <div class="container">
+        <label for="uname"><b>Email</b></label>
+        <input type="text" id="email" placeholder="Enter Email" name="uname" value="" required>
+        <span class="hr" id="email_error"></span>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" id="password" placeholder="Enter Password" name="psw" value="" required>
+        <span class="hr" id="password_error"></span>
+
+        <button type="submit" class="login-dangnhap" onclick="return validate();" id="btn" name="btn" value="Đăng nhập"
+        >Đăng nhập</button>
+        <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw"><a href="#">Quên mật khẩu</a></span>
+    </div>
+    </form>
+</div>
+
+<!--Sign Up Form-->
+<div id="id02" class="modal1">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close1" title="Close Modal">&times;</span>
+    <form class="modal-content1" action="/action_page.php">
+      <div class="container2">
+        <h1 style="text-align: center; margin: 10px 0 20px;"><b>Đăng ký</b></h1>
+        <p style="text-align: center;">Nếu bạn có một tài khoản, xin vui lòng chuyển qua trang đăng nhập.</p>
+        <hr>
+        <label for="email"><b>Email</b></label>
+        <input type="text" id="email1" value="" placeholder="Enter Email" name="email" required>
+        <span class="hr" id="email1_error"></span>
+
+        <label for="psw1"><b>Password</b></label>
+        <input type="password" id="password1" value="" placeholder="Enter Password" name="psw" required>
+        <span class="hr" id="password1_error"></span>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" id="repassword" value="" placeholder="Repeat Password" name="psw-repeat" required>
+        <span class="hr" id="repassword_error"></span>
+
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Nhớ mật khẩu
+        </label>
+  
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn1">Cancel</button>
+          <button type="submit" class="signupbtn" onclick="return validate1();">Đăng ký</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+          <!--SEARCH-->
+          <div id="search-result" class="tabcontent">
+            <div class="nen">
+                <div class="lienket">
+                    <a href="#" class="tc">Trang chủ</a><i class="fa-solid fa-angle-right" id="sol"></i>
+                    <span class="gt-cty">-Tìm kiếm</span>
+                </div>
+            </div>
+            <div class="posts">
+                <div class="posts-columns-2-tk">
+                    <article class="post-wrapper6">
+                        <div class="ds-sp">
+                            <h2 style="text-transform: uppercase; font-size: 14px;"><b>danh sách sản phẩm</b></h2>
+                            <hr style="width: 20px; color: rgb(241, 118, 174);"/>
+                            <a href="#">
+                                <p>Cháo ăn dặm (4)</p>
+                            </a>
+                        </div>
+                        <div class="ds-sp">
+                            <h2 style="text-transform: uppercase; font-size: 14px;"><b>Tin mới</b></h2>
+                            <a class="nd" href="#">
+                                <p class="tieu-de"><b>Đào tạo sản phẩm tại hệ thống Bibo Mart</b></p>
+                            </a>
+                            <a class="nd" href="#">
+                                <p class="tieu-de"><b>Cùng Cháo Matsuya Vui Hè Rộn Rã</b></p>
+                            </a>
+                            <a class="nd" href="#">
+                                <p class="tieu-de"><b>Biggame "Ăn dặm đủ chất - Cả tuần vô lo"</b></p>
+                            </a>
+                            <a class="nd" href="#">
+                                <p class="tieu-de"><b>CTKM "DINH DƯỠNG VƯỢT TRỘI - TIỆN LỢI GẤP ĐÔI“</b></p>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="post-wrapper6">
+                        <div class="posts-columns-3" id="posts-columns-3">
+                            <article class="post-wrapper6">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.4.webp" class="p6"/>
+                                </a>
+                                <div class="content-post">
+                                    <a href="#" class="tieu-de2">
+                                        <p><b> Cháo Matsuya cà chua và nấm - 60g </b></p>
+                                    </a>
+                                    <p class="gia-thanh1">75.000₫</p>
+                                </div>
+                            </article>
+                            <article class="post-wrapper6">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.1.webp" class="p6"/>
+                                </a>
+                                <div class="content-post">
+                                    <a href="#" class="tieu-de2">
+                                        <p><b> Cháo Matsuya cá thịt trắng và rau (vị sò điệp) - 60g </b></p>
+                                    </a>
+                                    <p class="gia-thanh1">75.000₫</p>
+                                </div>
+                            </article>                             
+                            <article class="post-wrapper6">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.3.webp" class="p6"/>
+                                </a>
+                                <div class="content-post">
+                                    <a href="#" class="tieu-de2">
+                                        <p><b> Cháo Matsuya rau và rong biển (vị sò điệp) - 60g </b></p>
+                                    </a>
+                                    <p class="gia-thanh1">75.000₫</p>
+                                </div>
+                            </article>
+                            <article class="post-wrapper6">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.2.webp" class="p6"/>
+                                </a>
+                                <div class="content-post">
+                                    <a href="#" class="tieu-de2">
+                                        <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                    </a>
+                                    <p class="gia-thanh1">75.000₫</p>
+                                </div>
+                            </article>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    <!--Main-->
+    <!--TRANG CHỦ-->
+    <main class="margin-main tabcontent" id="Trangchu">
+        <div class="avatar">
+            <h1 class="avt">
+                <a href="#"><img src="image/post1.webp" alt="" style="width: 100%; height: auto;"/></a>
+            </h1>
+        </div>
+        <div class="posts">
+            <div class="posts-columns-2">
+                <article class="post-wrapper hv">
+                    <a href="#"><img class="p2" src="image/post2.webp"/></a>
+                    <div class="overlay">
+                        <div class="boder">
+                        </div>
+                    </div>
+                </article>
+                <article class="post-wrapper hv">
+                    <a href="#"><img class="p2" src="image/post2.1.webp"/></a>
+                    <div class="overlay">
+                        <div class="boder">
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="note">
+                <h3 class="sanpham">
+                    <img  class="sunghuu" src="image/sunghuu.webp"/>
+                   <a  href="#"><p class="phongchu">Sản phẩm</p></a>
+                </h3>
+            </div>
+            <div class="posts-columns-4">
+                <article class="post-wrapper">
+                    <div class="hv">
+                        <a class="avt" href="#">
+                            <img class="p4" src="image/post4.1.webp"/>
+                            <div class="overlay">
+                                <button class="text"><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: black;"></i></button>
+                                <div class="deny">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                        <div class="content-post">
+                            <a class="nd" href="#">
+                                <p class="tieu-de"><b>Cháo Matsuya cà chua và nấm - 60g </b></p>
+                            </a>
+                            <p class="gia-thanh">75.000₫</p>
+                        </div>
+                </article>
+                <article class="post-wrapper">
+                    <div class="hv">
+                        <a class="avt" href="#">
+                            <img class="p4" src="image/post4.2.webp"/>
+                            <div class="overlay">
+                                <button class="text"><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: black;"></i></button>
+                                <div class="deny">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content-post">
+                        <a class="nd" href="#">
+                            <p class="tieu-de"><b>Cháo Matsuya cá thịt trắng và rau (vị sò điệp) - 60g </b></p>
+                        </a>
+                        <p class="gia-thanh">75.000₫</p>
+                    </div>           
+                </article>
+                <article class="post-wrapper">
+                    <div class="hv">
+                        <a class="avt" href="#">
+                            <img class="p4" src="image/post4.3.webp"/>
+                            <div class="overlay">
+                                <button class="text"><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: black;"></i></button>
+                                <div class="deny">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content-post">
+                        <a class="nd" href="#">
+                            <p class="tieu-de"><b>Cháo Matsuya rau và rong biển (vị sò điệp) - 60g </b></p>
+                        </a>
+                        <p class="gia-thanh">75.000₫</p>
+                    </div>       
+                </article>
+                <article class="post-wrapper">
+                    <div class="hv">
+                        <a class="avt" href="#">
+                            <img class="p4" src="image/post4.4.webp"/>
+                            <div class="overlay">
+                                <button class="text"><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: black;"></i></button>
+                                <div class="deny">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content-post">
+                        <a class="nd" href="#">
+                            <p class="tieu-de"><b>Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                        </a>
+                        <p class="gia-thanh">75.000₫</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+            <div class="cot1 hv">
+                <a href="#">
+                    <img class="p2" src="image/post1.1.webp"/>
+                    <div class="overlay">
+                        <div class="boder">
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        <div class="posts">
+            <div class="note">
+                <h3 class="sanpham">
+                    <img  class="sunghuu" src="image/sunghuu.webp"/>
+                   <a  href="#"><p class="phongchu">Ăn dặm cho bé</p></a>
+                </h3>
+            </div>
+            <div class="posts-columns-5" id="id_grab">
+                <article class="cards">
+                    <div class="card" id="zm">
+                        <a href="#"><img class="p4" id="special" src="image/post3.webp" alt=""/></a>
+                        <div class="card-content">
+                            <a class="nd" href="http://matsuya.vn/be-sap-an-dam-me-can-chuan-bi-nhung-gi" title="Bé sắp ăn dặm-Mẹ cần chuẩn bị những gì?">  
+                                <p class="tieu-de1"><b>Bé sắp ăn dặm-Mẹ cần chuẩn bị những gì?</b></p>
+                            </a>
+                            <p>Trẻ bắt đầu ăn dặm nên ăn gì? Cần chuẩn bị gì khi trẻ sắp ăn dặm?
+                            Đó là những câu hỏi của hàng triệu bà mẹ bỉm sữa khi baby sắp bước vào giai...</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="#"><img class="p4" src="image/post3.1.webp" alt=""/></a>
+                        <div class="card-content">
+                            <a class="nd" href="http://matsuya.vn/may-thang-cho-be-an-dam" title="Mấy tháng cho bé ăn dặm là tốt nhất?Khi nào bắt đầu ăn dặm?Tiêu chí cần biết">
+                                <p class="tieu-de1"><b>Mấy tháng cho bé ăn dặm là tốt nhất?Khi nào bắt đầu ăn dặm?Tiêu chí cần biết</b></p>
+                            </a>
+                            <p>Giai đoạn ăn dặm là vô cùng quan trọng, ảnh hưởng lớn đến tương lai của trẻ. 
+                                Việc xác định rõ mấy tháng cho bé ăn dặm là tốt nhất, khi nào bắt đầu ăn...</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="#"><img class="p4" src="image/post3.2.webp" alt=""/></a>
+                        <div class="card-content">
+                            <a class="nd" href="http://matsuya.vn/bot-an-dam-cho-be-tot-nhat-theo-tung-thang-tuoi" title="Bột ăn dặm cho bé tốt nhất theo từng tháng tuổi- bột ăn dặm nào tốt và mua ở đâu">
+                                <p class="tieu-de1"><b>Bột ăn dặm cho bé tốt nhất theo từng tháng tuổi - bột ăn dặm nào tốt và mua ở đâu</b></p>
+                            </a>
+                            <p>
+                                Với hàng trăm sản phẩm ăn dặm trên thị trường như hiện nay thì các loại bột ăn dặm nào tốt? 
+                                Bột ăn dặm nào chất lượng tốt cho bé&nbsp;mà mẹ có thể tin tưởng,...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="#"><img  class="p4" src="image/post3.3.webp" alt=""/></a>
+                        <div class="card-content">
+                            <a class="nd" href="http://matsuya.vn/cach-cho-tre-an-dam-dung-cach-trong-lan-dau" title="Cách cho trẻ ăn dặm đúng cách- mẹ chuẩn bị gì khi cho bé ăn dặm lần đầu?">
+                                <p class="tieu-de1"><b>Cách cho trẻ ăn dặm đúng cách - mẹ chuẩn bị gì khi cho bé ăn dặm lần đầu?</b></p>
+                            </a>
+                            <p>
+                                Cho trẻ ăn dặm không đúng cách có thể dẫn đến tình trạng còi xương, biếng ăn, ảnh hưởng lên hệ 
+                                tiêu hóa và gây ra nhiều tác hại khác cho trẻ. Vì vậy, bố...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="#"><img class="p4" src="image/post3.4.webp" alt=""/></a>
+                        <div class="card-content">
+                            <a class="nd" href="http://matsuya.vn/thuc-don-an-dam-cho-be-6-thang-tuoi-tot-nhat" title="Trẻ 6 tháng tuổi nên ăn gì? Thực đơn ăn dặm cho bé 6 đến 12 tháng tuổi">
+                                <p class="tieu-de1"><b>Trẻ 6 tháng tuổi nên ăn gì? Thực đơn ăn dặm cho bé 6 đến 12 tháng tuổi</b></p>
+                            </a>
+                            <p>
+                                Trẻ chậm phát triển hoặc&nbsp;bị dị ứng thường&nbsp;do ăn thức ăn không phù hợp khiến
+                                bố mẹ vừa đau đầu vừa đau lòng. Vì thế bố mẹ cần phải biết rõ bé 6 tháng tuổi...
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="bg-slide">
+        <div class="slideshow">
+            <div class="khach-hang">
+                <div class="slide">
+                    <div class="author-post">
+                        <img class="avatar-author" alt="" src="image/author1.webp"/>
+                        <div class="name-author">
+                                <span class="name">Mẹ Trần Thị Thục Anh</span>
+                                <span class="job"> _ Giáo viên mầm non</span>
+                            </div>
+                            <p>Nhờ có cháo Matsuya nên những buổi ăn dặm cho bé không còn khổ cực nữa. 
+                                Ngoài những dinh dưỡng trong cháo thì Matsuya còn có hương vị thơm ngon, 
+                                đôi khi mình còn nấu kèm rau củ và thịt khác nên bé rất thích.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="author-post">
+                        <img class="avatar-author" alt="" src="image/author2.webp"/>
+                        
+                            <div class="name-author">
+                                <span class="name">Mẹ Huong Hoang</span>
+                                <span class="job"> _ Nhân viên văn phòng</span>
+                            </div>
+                            <p>Cháo có 4 vị nên mình đỡ phải suy nghĩ đổi món cho bé không bị ngán.
+                            Thêm cái tính tiện lợi, lần nào bận quá thì bố cũng có thể nấu cho con<br/> ăn được.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="author-post">
+                        <img class="avatar-author" alt="" src="image/author3.webp"/>
+                            <div class="name-author">
+                                <span class="name">Mẹ Nguyễn Hải Chi</span>
+                                <span class="job"> _ Kế Toán</span>
+                            </div>
+                            <p>Mình dùng cháo Matsuya vì được khá nhiều người gợi ý, cháo khá thơm ngon
+                                 do dùng gạo đặc sản Nhật, nguyên liệu tươi ngon, gần như<br/> ko muối. 
+                                 Trộm vía bé nhà em rất hợp tác với cháo này lun ý ạ!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="posts">
+            <div class="note">
+                <h3 class="sanpham">
+                    <img  class="sunghuu" src="image/sunghuu.webp"/>
+                   <a  href="#"><p class="phongchu">Giới thiệu</p></a>
+                </h3>
+            </div>
+            <div class="posts-columns-2">
+                <article class="post-wrapper">
+                    <a href="#">
+                        <img class="p4" src="image/cty.webp" alt=""/>
+                    </a>
+                    <div class="content-post">
+                        <a class="nd" href="#">
+                            <p class="tieu-de"><b>Về Công ty Lê Mây </b></p>
+                        </a>
+                        <p>Công ty TNHH SX TM DV Lê Mây là một thành viên của tập đoàn Lotus (Lotus Group).
+                             Bắt đầu thực hiện các hoạt động kinh doanh kể từ năm 1996 và chính thức được...</p>
+                    </div>
+                </article>
+                <article class="post-wrapper">
+                    <a href="#">
+                        <img class="p4" src="image/sp.webp" alt=""/>
+                    </a>
+                    <div class="content-post">
+                        <a class="nd" href="#">
+                            <p class="tieu-de"><b>Về Matsuya </b></p>
+                        </a>
+                        <p>
+                            Công ty TNHH Matsuya có lịch sử 111 năm sản xuất các sản phẩm từ gạo Koshihikari nổi tiếng 
+                            của vùng Niigata, Nhật Bản. Với sứ mệnh mang đến những sản phẩm “An toàn, thơm...
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <!--GIỚI THIỆU-->
+    <div id="Gioithieu" class="tabcontent">
+        <div class="nen">
+            <div class="lienket">
+                <a href="#" class="tc">Trang chủ</a><i class="fa-solid fa-angle-right" id="sol"></i>
+                <span class="gt-cty">Giới thiệu tổng quan về công ty và thương hiệu</span>
+            </div>
+        </div>
+        <div class="posts">
+            <h3 class="tieu-de1">Giới thiệu tổng quan về công ty và thương hiệu</h3>
+            <div class="posts-columns-1">
+                <article class="post-wrapper1">
+                    <a href="#">
+                        <img class="p5" src="image/cty.webp"/>
+                    </a>
+                    <div class="content-post1">
+                        <a class="nt" href="#">
+                            <p class="tieu-de1"><b>Về Công ty Lê Mây</b></p>
+                        </a>
+                        <p>
+                            Công ty TNHH SX TM DV Lê Mây là một thành viên của tập đoàn Lotus (Lotus Group). 
+                            Bắt đầu thực hiện các hoạt động kinh doanh kể từ năm 1996 và chính thức được thành lập từ năm 2003.
+                            Với hơn 20 năm kinh nghiệm nhập khẩu nghành hàng mẹ và bé, Lê Mây đang ngày càng 
+                            tạo lập được vị trí là nhà phân phối hàng đầu về...
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <div class="posts-columns-1">
+                <article class="post-wrapper1">
+                    <a href="#">
+                        <img class="p5" src="image/sp.webp"/>
+                    </a>
+                    <div class="content-post1">
+                        <a class="nt" href="#">
+                            <p class="tieu-de1"><b>Về Matsuya</b></p>
+                        </a>
+                        <p>
+                            Công ty TNHH Matsuya có lịch sử 111 năm sản xuất các sản phẩm từ gạo Koshihikari
+                            nổi tiếng của vùng Niigata, Nhật Bản. Với sứ mệnh mang đến những sản phẩm “An toàn,
+                            thơm ngon mà vẫn đảm bảo dinh dưỡng” dành cho nhiều đối tượng sử dụng. Công ty
+                            Matsuya sản xuất nhiều dòng sản phẩm dành cho đối tượng trẻ em như: thức ăn dặm, cai sữa,...
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!--SẢN PHẨM-->
+    <div id="Sanpham" class="tabcontent">
+        <div class="nen">
+            <div class="lienket">
+                <a href="#" class="tc">Trang chủ</a><i class="fa-solid fa-angle-right" id="sol"></i>
+                <span class="gt-cty">Tất cả sản phẩm</span>
+            </div>
+        </div>
+        <div class="posts">
+            <div class="posts-columns-2-sp">
+                <div class="posts-columns-1-sp">
+                    <h3 style="text-align: left;"><p>Tất cả sản phẩm</p></h3>
+                    <div class="control">
+                        <div class="slideshow2">
+                            <button class="dang" onclick="openshow(event, 'sp-matsuya')" id="defaultOpen"><i class="fa fa-th-large" id="sol1"></i></button>
+                            <button class="dang" onclick="openshow(event, 'chao-matsuya')"><i class="fa fa-th-list" id="sol1"></i></button>
+                        </div>                        
+                        <form class="slideshow1" method="post" action="">
+                            <span class="ph">Sắp xếp:</span>
+                            <select class="ph" name="">
+                                <option>Mặc định</option>
+                                <option>Gía tăng dần</option>
+                                <option>Gía giảm dần</option>
+                                <option>Từ A-Z</option>
+                                <option>Từ Z-A</option>
+                                <option>Mới đến cũ</option>
+                                <option>Cũ đến mới</option>
+                            </select>
+                            <select name="" class="ph">
+                                <option>Hiển thị:</option>
+                                <option>12</option>
+                                <option>15</option>
+                                <option>18</option>
+                            </select>
+                        </form>
+                    </div>
+                <div class="sp1" id="sp-matsuya">
+                    <div class="posts-columns-3">
+                        <article class="post-wrapper">
+                            <a href="#" class="avt">
+                                <img src="image/post4.4.webp" class="p6"/>
+                            </a>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="gia-thanh1">75.000₫</p>
+                            </div>
+                        </article>
+                        <article class="post-wrapper">
+                            <a href="#" class="avt">
+                                <img src="image/post4.1.webp" class="p6"/>
+                            </a>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="gia-thanh1">75.000₫</p>
+                            </div>
+                        </article>                             
+                        <article class="post-wrapper">
+                            <a href="#" class="avt">
+                                <img src="image/post4.3.webp" class="p6"/>
+                            </a>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="gia-thanh1">75.000₫</p>
+                            </div>
+                        </article>
+                        <article class="post-wrapper">
+                            <a href="#" class="avt">
+                                <img src="image/post4.2.webp" class="p6"/>
+                            </a>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="gia-thanh1">75.000₫</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="sp1" id="chao-matsuya">
+                    <div class="posts-row-4">
+                        <article class="post-wrapper2" data-key="1">
+                            <div class="img">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.4.webp" class="p6"/>
+                                </a>
+                            </div>
+                            <div class="content-post">
+                                <div class="img">
+                                    <a href="#" class="tieu-de2">
+                                        <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                    </a>
+                                </div>
+                                <p class="noidung">
+                                    Cháo Matsuya 5 vị rau củ thích hợp cho bé từ 5 tháng tuổi trở lên tập ăn dặm. 
+                                    Với thành phần 5 loại rau được trồng tại Nhật (súp lơ xanh, bí đỏ, rau chân vịt, 
+                                    rau chân vịt mù tạt, cà rốt), được chế biến ngay trong ngày và công nghệ hiện đại độc quyền,
+                                     cháo Matsuya rau củ 5 vị giúp mẹ hoàn toàn an tâm chăm sóc bé yêu.
+                                </p>
+                                <p class="gia-thanh1">75.000₫</p>
+                                <input type="number" class="count" min="1" value="1">
+                                <button class="mua-hang" onclick="openCity(event, 'gio-hang')">MUA HÀNG</button>
+                                <button class="remove" onclick="Remove(1)"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </article>
+                        <article class="post-wrapper2" data-key="2">
+                            <div class="img">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.1.webp" class="p6"/>
+                                </a>
+                            </div>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="noidung">
+                                    Cháo Matsuya rau và rong biển (vị sò điệp) thơm ngon với nguyên liệu và những loại rong biển nổi
+                                     tiếng của Nhật Bản. Cháo được nhập khẩu trực tiếp từ Nhật đảm bảo nguồn gốc và mang đến 
+                                     dinh dưỡng tốt nhất trong<a href="#" style="font-weight: 600;"> thực đơn ăn dặm của trẻ.</a>
+                                </p>
+                                <p class="gia-thanh1">75.000₫</p>
+                                <input type="number" class="count" min="1" value="1">
+                                <button class="mua-hang" onclick="openCity(event, 'gio-hang')">MUA HÀNG</button>
+                                <button class="remove" onclick="Remove(2)"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </article>                             
+                        <article class="post-wrapper2" data-key="3">
+                            <div class="img">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.3.webp" class="p6"/>
+                                </a>
+                            </div>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="noidung">
+                                    Cháo Matsuya thịt trắng và rau (vị sò điệp) với thành phần tươi ngon từ cá bơn, rau chân vịt,
+                                     súp lơ xanh, cải bắp, cà rốt và sử dụng 100% đặc sản gạo sạch Koshihikari. Với vị ngọt của
+                                      rau kết hợp vị thơm dịu của sò điệp, sản phẩm này là sự chọn lựa thực đơn ăn dặm cho bé 
+                                      tốt nhất cho mẹ khi cho bé ăn dặm trong những bước phát triển đầu đời
+                                </p>
+                                <p class="gia-thanh1">75.000₫</p>
+                                <input type="number" class="count" min="1" value="1">
+                                <button class="mua-hang" onclick="openCity(event, 'gio-hang')">MUA HÀNG</button>
+                                <button class="remove" onclick="Remove(3)"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </article>
+                        <article class="post-wrapper2" data-key="4">
+                            <div class="img">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.2.webp" class="p6"/>
+                                </a>
+                            </div>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="noidung">
+                                    Cháo ăn dặm Matsuya cà chua và nấm là lựa chọn số 1 của các bà mẹ đang cho con ăn dặm kiểu Nhật. 
+                                    Cháo bột ăn dặm cho bé được nhập khẩu trực tiếp từ Nhật Bản, với nguyên liệu tươi ngon
+                                     giúp cân bằng dinh dưỡng và an toàn cho bé. Cháo Matsuya cà chua và nấm phù hợp với bé 
+                                     từ 7 tháng tuổi trở lên
+                                </p>
+                                <p class="gia-thanh1">75.000₫</p>
+                                <input type="number" class="count" min="1" value="1">
+                                <button class="mua-hang" onclick="openCity(event, 'gio-hang')">MUA HÀNG</button>
+                                <button class="remove" onclick="Remove(4)"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                </div>
+                <div class="ds-sp">
+                    <h2 style="text-transform: uppercase; font-size: 14px;"><b>danh sách sản phẩm</b></h2>
+                    <hr style="width: 20px; color: rgb(241, 118, 174);"/>
+                    <a href="#">
+                        <p>Cháo ăn dặm (4)</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--GIO HANG-->
+    <div id="gio-hang" class="tabcontent">
+        <div class="nen">
+            <div class="lienket">
+                <a href="#" class="tc">Trang chủ</a><i class="fa-solid fa-angle-right" id="sol"></i>
+                <span class="gt-cty">giỏ hàng</span>
+            </div>
+        </div>
+        <div class="posts">
+            <div class="cart">
+                <div class="listCart">
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--CHÁO ĂN DĂM-->
+    <div id="Chaoandam" class="tabcontent">
+        <div class="nen">
+            <div class="lienket">
+                <a href="#" class="tc">Trang chủ</a><i class="fa-solid fa-angle-right" id="sol"></i>
+                <span class="gt-cty">Danh mục sản phẩm cháo ăn dặm của Matsuya</span>
+            </div>
+        </div>
+        <div class="posts">
+            <div class="posts-columns-2-sp">
+                <div class="posts-columns-1-sp">
+                    <h3 style="text-align: left;"><p>Danh mục sản phẩm cháo ăn dặm của Matsuya</p></h3>
+                    <div class="control">
+                        <div class="slideshow2">
+                            <button class="dang1" onclick="openshow1(event, 'matsuya-sp')" id="defaultOpen1"><i class="fa fa-th-large" id="sol1"></i></button>
+                            <button class="dang1" onclick="openshow1(event, 'matsuya-chao')"><i class="fa fa-th-list" id="sol1"></i></button>
+                        </div>                        
+                        <form class="slideshow1" method="post" action="">
+                            <span class="ph">Sắp xếp:</span>
+                            <select class="ph" name="">
+                                <option>Mặc định</option>
+                                <option>Gía tăng dần</option>
+                                <option>Gía giảm dần</option>
+                                <option>Từ A-Z</option>
+                                <option>Từ Z-A</option>
+                                <option>Mới đến cũ</option>
+                                <option>Cũ đến mới</option>
+                            </select>
+                            <select name="" class="ph">
+                                <option>Hiển thị:</option>
+                                <option>12</option>
+                                <option>15</option>
+                                <option>18</option>
+                            </select>
+                        </form>
+                    </div>
+                <div class="sp2" id="matsuya-sp">
+                    <div class="posts-columns-3">
+                        <article class="post-wrapper">
+                            <a href="#" class="avt">
+                                <img src="image/post4.4.webp" class="p6"/>
+                            </a>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="gia-thanh1">75.000₫</p>
+                            </div>
+                        </article>
+                        <article class="post-wrapper">
+                            <a href="#" class="avt">
+                                <img src="image/post4.1.webp" class="p6"/>
+                            </a>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="gia-thanh1">75.000₫</p>
+                            </div>
+                        </article>                             
+                        <article class="post-wrapper">
+                            <a href="#" class="avt">
+                                <img src="image/post4.3.webp" class="p6"/>
+                            </a>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="gia-thanh1">75.000₫</p>
+                            </div>
+                        </article>
+                        <article class="post-wrapper">
+                            <a href="#" class="avt">
+                                <img src="image/post4.2.webp" class="p6"/>
+                            </a>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="gia-thanh1">75.000₫</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="sp2" id="matsuya-chao">
+                    <div class="posts-row-4">
+                        <article class="post-wrapper2" data-key="1">
+                            <div class="img">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.4.webp" class="p6"/>
+                                </a>
+                            </div>
+                            <div class="content-post">
+                                <div class="img">
+                                    <a href="#" class="tieu-de2">
+                                        <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                    </a>
+                                </div>
+                                <p class="noidung">
+                                    Cháo Matsuya 5 vị rau củ thích hợp cho bé từ 5 tháng tuổi trở lên tập ăn dặm. 
+                                    Với thành phần 5 loại rau được trồng tại Nhật (súp lơ xanh, bí đỏ, rau chân vịt, 
+                                    rau chân vịt mù tạt, cà rốt), được chế biến ngay trong ngày và công nghệ hiện đại độc quyền,
+                                     cháo Matsuya rau củ 5 vị giúp mẹ hoàn toàn an tâm chăm sóc bé yêu.
+                                </p>
+                                <p class="gia-thanh1">75.000₫</p>
+                                <input type="number" class="count" min="1" value="1">
+                                <button class="mua-hang" onclick="openCity(event, 'gio-hang')">MUA HÀNG</button>
+                                <button class="remove" onclick="Remove(1)"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </article>
+                        <article class="post-wrapper2" data-key="2">
+                            <div class="img">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.1.webp" class="p6"/>
+                                </a>
+                            </div>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="noidung">
+                                    Cháo Matsuya rau và rong biển (vị sò điệp) thơm ngon với nguyên liệu và những loại rong biển nổi
+                                     tiếng của Nhật Bản. Cháo được nhập khẩu trực tiếp từ Nhật đảm bảo nguồn gốc và mang đến 
+                                     dinh dưỡng tốt nhất trong<a href="#" style="font-weight: 600;"> thực đơn ăn dặm của trẻ.</a>
+                                </p>
+                                <p class="gia-thanh1">75.000₫</p>
+                                <input type="number" class="count" min="1" value="1">
+                                <button class="mua-hang" onclick="openCity(event, 'gio-hang')">MUA HÀNG</button>
+                                <button class="remove" onclick="Remove(2)"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </article>                             
+                        <article class="post-wrapper2" data-key="3">
+                            <div class="img">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.3.webp" class="p6"/>
+                                </a>
+                            </div>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="noidung">
+                                    Cháo Matsuya thịt trắng và rau (vị sò điệp) với thành phần tươi ngon từ cá bơn, rau chân vịt,
+                                     súp lơ xanh, cải bắp, cà rốt và sử dụng 100% đặc sản gạo sạch Koshihikari. Với vị ngọt của
+                                      rau kết hợp vị thơm dịu của sò điệp, sản phẩm này là sự chọn lựa thực đơn ăn dặm cho bé 
+                                      tốt nhất cho mẹ khi cho bé ăn dặm trong những bước phát triển đầu đời
+                                </p>
+                                <p class="gia-thanh1">75.000₫</p>
+                                <input type="number" class="count" min="1" value="1">
+                                <button class="mua-hang" onclick="openCity(event, 'gio-hang')">MUA HÀNG</button>
+                                <button class="remove" onclick="Remove(3)"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </article>
+                        <article class="post-wrapper2" data-key="4">
+                            <div class="img">
+                                <a href="#" class="avt">
+                                    <img src="image/post4.2.webp" class="p6"/>
+                                </a>
+                            </div>
+                            <div class="content-post">
+                                <a href="#" class="tieu-de2">
+                                    <p><b> Cháo Matsuya 5 loại rau củ - 60g </b></p>
+                                </a>
+                                <p class="noidung">
+                                    Cháo ăn dặm Matsuya cà chua và nấm là lựa chọn số 1 của các bà mẹ đang cho con ăn dặm kiểu Nhật. 
+                                    Cháo bột ăn dặm cho bé được nhập khẩu trực tiếp từ Nhật Bản, với nguyên liệu tươi ngon
+                                     giúp cân bằng dinh dưỡng và an toàn cho bé. Cháo Matsuya cà chua và nấm phù hợp với bé 
+                                     từ 7 tháng tuổi trở lên
+                                </p>
+                                <p class="gia-thanh1">75.000₫</p>
+                                <input type="number" class="count" min="1" value="1">
+                                <button class="mua-hang" onclick="openCity(event, 'gio-hang')">MUA HÀNG</button>
+                                <button class="remove" onclick="Remove(4)"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                </div>
+                <div class="ds-sp">
+                    <h2 style="text-transform: uppercase; font-size: 14px;"><b>danh sách sản phẩm</b></h2>
+                    <hr style="width: 20px; color: rgb(241, 118, 174);"/>
+                    <a href="#">
+                        <p>Cháo ăn dặm (4)</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--ĂN DẶM CHO BÉ-->
+    <div id="Andamchobe" class="tabcontent">
+            <div class="nen">
+                <div class="lienket">
+                    <a href="#" class="tc">Trang chủ</a><i class="fa-solid fa-angle-right" id="sol"></i>
+                    <span class="gt-cty">Tổng hợp kiến thức và kinh nghiệm ăn dặm cho bé</span>
+                </div>
+            </div>
+            <div class="posts">
+                <h3 style="margin: 10px 20px;">Tổng hợp kiến thức và kinh nghiệm ăn dặm cho bé</h3>
+                <div class="posts-row-5">
+                    <article class="post-wrapper2">
+                        <a href="#">
+                            <img class="p3" src="image/post3.webp" alt="">
+                        </a>
+                        <div class="content-post2">
+                            <a href="#" class="title">
+                                <h3 class="tieu-de3">Bé sắp ăn dặm - Mẹ cần chuẩn bị những gì?</h3>
+                            </a>
+                            <p>Trẻ bắt đầu ăn dặm nên ăn gì? Cần chuẩn bị gì khi trẻ sắp ăn dặm? Đó là những câu 
+                                hỏi của hàng triệu bà mẹ bỉm sữa khi baby sắp bước vào giai đoạn ăn dặm. Chắc chắn 
+                                ăn dặm là hành trình nhiều khó khăn tốn nhiều thời gian công sức của mẹ. 
+                                Vì thế mẹ hãy chuẩn bị thật tốt những điều sau đây để chăm...</p>
+                        </div>
+                    </article>
+                    <article class="post-wrapper2">
+                        <a href="#">
+                            <img class="p3" src="image/post3.1.webp" alt="">
+                        </a>
+                        <div class="content-post2">
+                            <a href="#" class="title">
+                                <h3 class="tieu-de3">Mấy tháng cho bé ăn dặm là tốt nhất? Khi nào bắt đầu ăn dặm? Tiêu chí cần biết</h3>
+                            </a>
+                            <p>Giai đoạn ăn dặm là vô cùng quan trọng, ảnh hưởng lớn đến tương lai của trẻ. 
+                                Việc xác định rõ mấy tháng cho bé ăn dặm là tốt nhất, khi nào bắt đầu ăn dặm và 
+                                những tiêu chí cần thiết sẽ giúp bố mẹ nuôi con khỏe mạnh và thông minh</p>
+                        </div>
+                    </article>
+                    <article class="post-wrapper2">
+                        <a href="#">
+                            <img class="p3" src="image/post3.2.webp" alt="">
+                        </a>
+                        <div class="content-post2">
+                            <a href="#" class="title">
+                                <h3 class="tieu-de3">Bột ăn dặm cho bé tốt nhất theo từng tháng tuổi - bột ăn dặm nào tốt và mua ở đâu</h3>
+                            </a>
+                            <p>Với hàng trăm sản phẩm ăn dặm trên thị trường như hiện nay thì các loại bột ăn dặm nào tốt? 
+                                Bột ăn dặm nào chất lượng tốt cho bé mà mẹ có thể tin tưởng, và nên mua ở đâu uy tín để 
+                                đảm bảo sức khỏe cho con? Hãy cùng đọc bài viết về Bột ăn dặm cho bé tốt nhất theo từng
+                                 tháng tuổi và các tiêu chí...</p>
+                        </div>
+                    </article>
+                    <article class="post-wrapper2">
+                        <a href="#">
+                            <img class="p3" src="image/post3.3.webp" alt="">
+                        </a>
+                        <div class="content-post2">
+                            <a href="#" class="title">
+                                <h3 class="tieu-de3">Cách cho trẻ ăn dặm đúng cách - mẹ chuẩn bị gì khi cho bé ăn dặm lần đầu?</h3>
+                            </a>
+                            <p>Cho trẻ ăn dặm không đúng cách có thể dẫn đến tình trạng còi xương, 
+                                biếng ăn, ảnh hưởng lên hệ tiêu hóa và gây ra nhiều tác hại khác cho trẻ. Vì vậy,
+                                 bố mẹ cần đọc bài viết này về Cách cho trẻ ăn dặm đúng cách - khoa học để bảo
+                                  vệ sức khỏe cũng như mang đến cho trẻ những điều tốt đẹp nhất. Bài viết trả...</p>
+                        </div>
+                    </article>
+                    <article class="post-wrapper2">
+                        <a href="#">
+                            <img class="p3" src="image/post3.4.webp" alt="">
+                        </a>
+                        <div class="content-post2">
+                            <a href="#" class="title">
+                                <h3 class="tieu-de3">Trẻ 6 tháng tuổi nên ăn gì? Thực đơn ăn dặm cho bé 6 đến 12 tháng tuổi</h3>
+                            </a>
+                            <p>Trẻ chậm phát triển hoặc bị dị ứng thường do ăn thức ăn không phù hợp khiến
+                                 bố mẹ vừa đau đầu vừa đau lòng. Vì thế bố mẹ cần phải biết rõ bé 6 tháng tuổi nền 
+                                 ăn gì? Phương pháp và thực đơn ăn dặm cho bé từ 6 đến 12 tháng tuổi ra sao trong bài 
+                                 đọc này. Bài đọc tổng hợp những thông tin cần thiết bao gồm: trẻ 6...</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+    </div>
+    <!--CÂU HỎI THƯỜNG GẶP-->
+    <div id="Cauhoithuonggap" class="tabcontent">
+        <div class="nen">
+            <div class="lienket">
+                <a href="#" class="tc">Trang chủ</a><i class="fa-solid fa-angle-right" id="sol"></i>
+                <span class="gt-cty">Câu hỏi thường gặp</span>
+            </div>
+        </div>
+        <div class="posts">
+           <h3 style="margin: 10px 20px;">Câu hỏi thường gặp</h3>
+            <img src="image/post1.webp" style="width: 100%; height: auto;"/>
+            <div class="content-post3">
+               <b >Câu 1: Tôi có thể tìm mua sản phẩm cháo ăn dặm Matsuya ở đâu?</b>
+               <p>Quý khách có thể tìm mua các sản phẩm cháo ăn dặm Matsuya tại các hệ thống cửa hàng mẹ bé, các siêu thị và hệ thống online.</p>
+               <p><b > Câu 2: Sản phẩm cháo ăn dặm Matsuya</b> có phải là hàng phân phối chính hãng trực tiếp từ Nhật Bản?</p>
+               <p>Sản phẩm cháo ăn dặm Matsuya được công ty TNHH SX TM&DV Lê Mây nhập khẩu trực tiếp từ công ty Matsuya Nhật Bản và phân phối độc quyền tại thị trường Việt Nam.</p>
+               <b >Câu 3: Một gói cháo ăn dặm sử dụng được bao nhiêu lần, trong bao lâu.</b>
+               <p>Một gói cháo ăn dặm  dùng dc từ 3-5 lần tùy theo độ tuổi của bé, giá trị tương đương 17,000 - 28,000 vnd/ 1 lần sử dụng. Sản phẩm được sử dụng tốt nhất trong khoảng thời gian 2 tuần từ khi mở túi.</p>
+               <b >Câu 4: Chất lượng sản phẩm có đảm bảo, tuân thủ theo quy định của Bộ Y tế và các cơ quan chức năng của Việt Nam không?</b>
+               <p>Sản phẩm đã đạt chuẩn chứng nhận vệ sinh ATTP, đủ điều kiện lưu hành trên lãnh thổ Việt Nam.</p>
+               <b >Câu 5. Sản phẩm này có gì đặc biệt ?</b>
+               <p>Sản phẩm được làm từ 100% gạo Koshi Hikari nổi tiếng của Nhật Bản.<br/>Nguồn nguyên liệu tươi ngon được nhập và chế biến ngay trong ngày, độ tươi ngon và tự nhiên của sản phẩm hoàn toàn được giữ nguyên.<br>
+                Sản phẩm đã hoàn toàn loại bỏ 27 chất gây dị ứng đối với trẻ.<br>Không chất phụ gia, không chất bảo quản, tuyệt đối an toàn với trẻ.<br>Tiện lợi cho bố mẹ trẻ, năng động hay muốn cùng bé đi du lịch, đã ngoại cuối tuần: trọng lượng nhỏ, dễ mang, túi zíp dùng xong đóng lại bảo quản tiếp được.<br>Dễ bảo quản, tiết kiệm: dùng 1 lần xong đóng túi zip, bảo quản môi trường phòng bình thường được tiếp trong 1-2 tuần để lần sau dùng tiếp.</p>
+                <b >Câu 6: Sản phẩm này cung cấp những chất gì?</b>
+                <p>Cháo ăn dặm Matsuya cung cấp đa dạng dưỡng chất thiết yếu cho sự phát triển của trẻ trong giai đoạn ăn dặm.</p>
+                <ul>
+                    <li>Gạo KoshiHikari: cung cấp tinh bột giúp cung cấp năng lượng cho trẻ.</li><br>
+                    <li> Rong biển, bí đỏ, súp lơ xanh, măng tây, các loại rau củ... cung cấp cho trẻ nhiều vitamin và chất xơ giúp tăng cường miễn dịch, xương chắc khỏe.</li><br>
+                    <li>Thịt cá bơn: giàu chất đạm giúp xây dựng, duy trì, tái tạo tế bào của cơ thể.</li><br>
+                    <li> Đặc biệt, cháo Matsuya gói mới còn được bổ sung canxi từ sò điệp và dầu cá tinh chế có chứa DHA giúp bé phát triển chiều cao và thông minh, lanh lợi.</li><br>
+                </ul>
+                <p>Lưu ý: Trong giai đoạn ăn dặm, vẫn cho bé bú sữa, cho đến khi bé tự thôi sữa.</p>
+                <b>Câu 7: Pha chế sản phẩm này có phức tạp không ?</b>
+                <p>Pha cháo cực kỳ đơn giản chỉ với 3 bước:<br>
+
+                    Bước 1: Cho một lượng vừa đủ vào bát.<br>
+                    
+                    Bước 2: Thêm nước nóng.<br>
+                    
+                    Đối với trẻ 5-6 tháng tỉ lệ là 1:6 (Cháo : Nước)<br>
+                    
+                    Trẻ từ 7 - 8 tháng tỉ lệ 1:4 (Cháo : Nước)<br>
+                    
+                    Trẻ trên 9 - 11 tháng tỉ lệ 1:3 (Cháo : Nước)<br>
+                    
+                    Bước 3: khuấy đều. Sau khi kiểm tra nhiệt độ phù hợp thì có thể cho trẻ ăn.<br>
+                    
+                    Bột nước dùng Matsuya được dùng cho các món mì: Hòa 3.5g sản phẩm trong 40ml nước nóng.</p>
+                <b>Câu 8: Những lưu ý khi sử dụng</b>
+                <p>Khi sử dụng sản phẩm cần chú ý không để bị bỏng khi sử dụng nước nóng.<br>
+                    Không cho trẻ ăn thức đã chế biến từ trước hoặc thức ăn thừa<br>
+                    Đóng kỹ miệng túi sau khi sử dụng để bảo quản sản phẩm không bị ẩm
+                    mốc.<br>
+                    Có thể nhìn thấy 1 số hạt nâu sẫm, nhưng đừng lo lắng đó là thành
+                    phần mầm gạo.<br>
+                    Sử dụng nhanh chóng trong vòng 2 tuần sau khi mở túi.</p>
+                    <b>Câu 9: Hạn sử dụng sản phẩm là bao lâu?</b>
+                    <p>Sản phẩm có hạn sử dụng là 02 năm kể từ ngày sản xuất.</p>
+                    <b>Câu 10: Nếu có thắc mắc về sản phẩm thì tôi có thể liên lạc với ai? bộ phận nào?</b>
+                    <p>Nếu quý khách có thắc mắc về sản phẩm vui long liên hệ bộ phận chăm sóc khách hàng của công ty TNHH SX TM&DV Lê Mây. Số hotline : Miền Bắc : 08 3993 7117. Miền Nam : 0916434429</p>
+            </div>
+        </div>       
+    </div>
+    <!--TIN TỨC-->
+    <div id="Tintuc" class="tabcontent">
+         <div class="nen">
+            <div class="lienket">
+                <a href="#" class="tc">Trang chủ</a><i class="fa-solid fa-angle-right" id="sol"></i>
+                <span class="gt-cty">Tin tức về hoạt động và chương trình của Matsuya</span>
+            </div>
+        </div>
+        <div class="posts">
+              <h3 style="font-weight: 600; margin: 3rem 0 2rem;">Tin tức về hoạt động và chương trình của Matsuya</h3>
+            <div class="mySlides">
+              <div class="posts-row-6">
+                <article class="post-wrapper3 qb">
+                    <div>
+                        <a href="#" class="">
+                            <img src="image/tt1.webp" class="p3"/>
+                        </a>
+                    </div>
+                    <div class="content-post2">
+                        <a href="#" class="title">
+                            <h3 class="tieu-de3">Đào tạo sản phẩm tại hệ thống Bibo Mart</h3>
+                        </a>
+                        <p>
+                            Không còn quá xa lạ đối với các hệ thống mẹ và bé như Bibo Mart, Kids Plaza, Shop Trẻ Thơ... Vừa qua, cháo ăn dặm Matsuya cùng kết hợp một số nhãn hàng khác
+                        </p>
+                        <p>đã tổ chức buổi Đào tạo sản phẩm cho nhân viên bán hàng tại hệ thống Bibo Mart trên toàn quốc. </p>
+                    </div>
+                </article>
+                <article class="post-wrapper3 qb">
+                    <div>
+                        <a href="#" class="">
+                            <img src="image/tt2.webp" class="p3"/>
+                        </a>
+                    </div>
+                    <div class="content-post2">
+                        <a href="#" class="title">
+                            <h3 class="tieu-de3">Cùng Cháo Matsuya Vui Hè Rộn Rã</h3>
+                        </a>
+                        <p>
+                            < KHUYẾN MÃI HẤP DẪN > Cùng Cháo Matsuya Vui Hè Rộn Rã Mùa hè tới cũng là dịp bé được cùng đi chơi và khám phá biết bao điều mới lạ. Đón hè vui rộn rã, Matsuya dành tặng vô vàn quà hấp dẫn tới các bé yêu. Chỉ cần mua 1 gói cháo ăn dặm, mẹ đã có thể đổi ngay quà với cơ chế vô cùng hấp dẫn: Quà tặng khu...
+                        </p>
+                    </div>
+                </article>
+                <article class="post-wrapper3 qb">
+                    <div>
+                        <a href="#" class="">
+                            <img src="image/tt3.webp" class="p3"/>
+                        </a>
+                    </div>
+                    <div class="content-post2">
+                        <a href="#" class="title">
+                            <h3 class="tieu-de3">Biggame "Ăn dặm đủ chất - Cả tuần vô lo"</h3>
+                        </a>
+                        <p>
+                            Với nhiều bà mẹ, ăn dặm thực sự là một cuộc chiến khi mẹ phải dành quá nhiều thời gian nấu nướng nhưng con lại không hợp tác ăn. Matsuya hiểu rằng, ăn dặm không chỉ là mang tới cho con nguồn dưỡng chất mà còn là khoảng thời gian để con khám phá thêm những món ăn và cùng tận hưởng niềm vui ăn uống. Cuộc thi sẽ là nơi các...
+                        </p>
+                    </div>
+                </article>
+                <article class="post-wrapper3 bq">
+                    <div>
+                        <a href="#" class="avt">
+                            <img src="image/tt4.webp" class="p3" style="width: 100%; height: 450px;"/>
+                        </a>
+                    </div>
+                    <div class="content-post2">
+                        <a href="#" class="title">
+                            <h3 class="tieu-de3">CTKM "DINH DƯỠNG VƯỢT TRỘI - TIỆN LỢI GẤP ĐÔI“</h3>
+                        </a>
+                        <p>
+                            Nhân dịp ra mắt Matsuya gói mới, Matsuya áp dụng chương trình khuyến mãi cực hấp dẫn. Mua 1 gói cháo: Tặng ngay 1 yếm ăn dặm hoặc khăn tay Mollis hoặc bóng đồ chơi đa sắc màu Mua 2 gói cháo: Tặng ngay 1 xô đi biển cho bé Mua 3 gói cháo: Tặng ngay bộ xếp hình khám phá nông trại Mua 4 gói cháo: Tặng ngay 1 thú bông bé...
+                        </p>
+                    </div>
+                </article>
+                <article class="post-wrapper3 qb">
+                    <div>
+                        <a href="#" class="avt">
+                            <img src="image/tt5.webp" class="p3"/>
+                        </a>
+                    </div>
+                    <div class="content-post2">
+                        <a href="#" class="title">
+                            <h3 class="tieu-de3">MATSUYA MUA 1 TẶNG 1 TRÊN TOÀN QUỐC</h3>
+                        </a>
+                        <p>
+                            Những ngày Tết bận rộn không có thời gian nấu nướng nhưng mẹ chẳng lo vì có Matsuya luôn đảm bảo cho bé bữa ăn tiện lợi, dinh dưỡng. Chào năm mới 2020 và chuẩn bị đón Tết Canh Tý, Matsuya dành tặng tất cả các mẹ và bé yêu món quà vô cùng hấp dẫn:   Ưu đãi MUA 1 TẶNG 1 - áp dụng trên toàn quốc.     Từ nay tới...
+                        </p>
+                    </div>
+                </article>
+                <article class="post-wrapper3 qb">
+                    <div>
+                        <a href="#" class="avt">
+                            <img src="image/tt6.webp" class="p3"/>
+                        </a>
+                    </div>
+                    <div class="content-post2">
+                        <a href="#" class="title">
+                            <h3 class="tieu-de3">CUỘC THI ẢNH "ĂN DẶM LÀ NIỀM VUI"</h3>
+                        </a>
+                        <p>
+                            Ăn dặm không chỉ là vấn đề dinh dưỡng. Ngoài vấn đề dinh dưỡng, một trong những điều quan trọng khi cho bé tập ăn dặm chính là tạo thói quen ăn uống, nhận biết mùi vị, đặc biệt là mang lại niềm vui thích ăn uống cho trẻ. Điều mà cháo ăn dặm Matsuya hướng tới cũng như mong muốn của bất kỳ người mẹ nào đó là NIỀM VUI...
+                        </p>
+                    </div>
+                </article>
+                </div>
+            </div>
+            <div class="mySlides">
+              <div class="posts-row-3">
+                <article class="post-wrapper4 ab">
+                    <div>
+                        <a href="#">
+                            <img src="image/tt2-1.webp" class="p3"/>
+                        </a>
+                    </div>
+                    <div class="content-post2">
+                        <a href="#" class="title">
+                            <h3 class="tieu-de3">KHUYẾN MÃI HẤP DẪN “ĂN DẶM TIỆN LỢI - NHẬN QUÀ PHẤN KHỞI”</h3>
+                        </a>
+                        <p>
+                            Những ngày cuối năm bận rộn sẽ trở nên nhẹ nhàng hơn khi có cháo ăn dặm Matsuya tiện lợi. Tuyệt vời hơn nữa khi vừa bé vừa có cháo ngon vừa có quà tặng xinh xắn nữa đúng không nào.   Cháo Matsuya đang áp dụng CTKM hấp dẫn nhất năm đó các mẹ ơi! Chỉ cần mua 1 gói cháo Matsuya là mẹ đã được tặng kèm ngay 1...
+                        </p>
+                    </div>
+                </article>
+                <article class="post-wrapper4">
+                    <div>
+                        <a href="#">
+                            <img src="image/tt2-2.webp" style="width: 100%; height: 400px;"/>
+                        </a>
+                    </div>
+                    <div class="content-post2">
+                        <a href="#" class="title">
+                            <h3 class="tieu-de3">QUÀ MATSUYA THẬT ĐÃ - MẸ ĐỪNG BỎ LỠ NHA</h3>
+                        </a>
+                        <p>
+                            Để mang đến cho quý khách hàng có cơ hội được trải nghiệm sản phẩm và nhận nhiều ưu đãi của Matsuya, trong tháng 5 và tháng 6 nhãn hàng triển khai nhiều chương trình rất hấp dẫn áp dụng cho cả 2 miền Nam, Bắc. Cụ thể Matsuya sẽ mang đến chương trình ưu đãi, dùng thử sản phẩm và dành tặng khách hàng nhiều phần quà rất thú...
+                        </p>
+                    </div>
+                </article>
+                <article class="post-wrapper4">
+                    <div>
+                        <a href="#">
+                            <img src="image/tt2-3.webp" style="width: 100%; height: 400px;"/>
+                        </a>
+                    </div>
+                    <div class="content-post2">
+                        <a href="#" class="title">
+                            <h3 class="tieu-de3">CÁC BƯỚC PHA CHÁO ĂN DẶM MATSUYA</h3>
+                        </a>
+                        <p>
+                            Để hướng dẫn các mẹ chế biến cháo ăn dặm Matsuya cho bé yêu thật đơn giản, chúng tôi xin chia sẻ cách thức thực hiện theo trình tự các bước dưới đây.
+                        </p>
+                    </div>
+                </article>
+              </div>
+            </div>
+              <div class="tab1">
+                <button class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-angles-left"></i></button>
+                <button class="btn1" onclick="currentSlide(1)">1</button>
+                <button class="btn1" onclick="currentSlide(2)">2</button>
+                <button class="next" onclick="plusSlides(1)"><i class="fa-solid fa-angles-right"></i></button>
+              </div>       
+        </div>
+    </div>
+    <!--LIÊN HỆ-->
+    <div id="Lienhe" class="tabcontent">
+        <div class="nen">
+            <div class="lienket">
+                <a href="#" class="tc">Trang chủ</a><i class="fa-solid fa-angle-right" id="sol"></i>
+                <span class="gt-cty">Liên hệ</span>
+            </div>
+        </div>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.966608323613!2d105.79050001492905!3d20.99397559434076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acbb85af5c87%3A0x9d69a83d3f08cd68!2zQ2hpIG5ow6FuaCBDw7RuZyB0eSBUTkhIIFNYIFRNIERWIEzDqiBNw6J5IHThuqFpIEjDoCBO4buZaQ!5e0!3m2!1svi!2s!4v1675773753456!5m2!1svi!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="posts">
+            <div class="posts-columns-2-lh">
+                <article class="post-wrapper5">
+                   <div class="container">
+                        <form method="post" action="url" class="posts-row-3-lh">
+                            <div class="cot">
+                                <div>
+                                    <label class="hoten">Họ và tên</label><span class="mausac">*</span>
+                                </div>
+                                <div>
+                                    <input type="text" class="textpost-lh" name="Hovaten" style="width: 600px; height: 30px;"/>
+                                </div>
+                            </div>
+                            <div class="cot">
+                                <div>
+                                    <label class="email1">Email</label><span class="mausac">*</span>
+                                </div>
+                                <div>
+                                    <input type="text" class="textpost-lh" name="Email" style="width: 600px; height: 30px;"/>
+                                </div>
+                            </div>
+                            <div class="cot">
+                                <div>
+                                    <label class="content1">Nội dung</label><span class="mausac">*</span>
+                                </div>
+                                <div>
+                                    <textarea  name="subject" class="textpost-lh1" style="width: 600px; height: 200px;"></textarea>
+                                    <button class="sendto">Gửi</button>
+                                </div>
+                            </div>
+                        </form>
+                   </div>
+                </article>
+                <article class="post-wrapper5">
+                    <p>Nếu khách hàng có bất kỳ yêu cầu trợ giúp nào hoặc muốn đặt hàng, lấy thêm thông tin hãy liên hệ với Matsuya bằng những cách bên dưới đây</p>
+                    <br/>
+                    <h2>Tại TP.HCM</h2>
+                    <ul class="tp-hcm">
+                        <li>Số 10 đường 23, Khu phố 2, Phường An Khánh, Tp. Thủ Đức, Tp. Hồ Chí Minh</li><br/>
+                        <li>(028) 7304 9998</li><br/>
+                        <li>0916 434 429   -  info@lemay.com.vn</li><br/>
+                    </ul>
+                    <h2 style="margin-top: 30px;">TẠI HÀ NỘI</h2>
+                    <ul class="tp-hcm">
+                        <li>Tầng 1, tòa nhà Housinco Phùng Khoang, KDTM Phùng Khoang, P.Trung Văn, Q.Nam Từ Liêm, Hà Nội</li><br/>
+                        <li>(024) 3782 0725</li><br/>
+                        <li>08 3993 7117  -  info@lemay.com.vn</li><br/>
+                    </ul>
+                    <h2 style="margin-top: 50px;">THEO DÕI CHÚNG TÔI:</h2>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!---Footer-->
+    <footer class="site-footer">
+        <div class="site-footer-content-post">
+            <div class="content-company">
+                <article class="cty">
+                    <h1 class="name-cty">CÔNG TY TNHH SX TM DV LÊ MÂY</h1>
+                    <div class="thongtin-cty">
+                        <div class="local">
+                            <i class="fa-sharp fa-solid fa-location-dot"></i>
+                            <span class="dc">Số 10, Đường 23, Ấp Bình Khánh 2, P. Bình An, Q.2, TP. Hồ Chí Minh</span>
+                        </div> 
+                        <div class="phone">
+                            <a href="#" class="p"><i class="sol fa-solid fa-phone"></i> (028) 7304 9998</a><br>
+                            <a href="#" class="p"><i class="sol fa-solid fa-phone"></i> 0916 434 429</a> - 
+                            <a href="#" class="p"><i class="sol fa-solid fa-envelope"></i> info@lemay.com.vn</a>
+                        </div>
+                        <a href="#" class="p"><img class="thongbao" src="image/dathongbao.webp"/></a>
+                    </div>
+                </article>
+                <article class="cty">
+                    <h1 class="name-cty">VĂN PHÒNG CÔNG TY TNHH SX DV LÊ MÂY TẠI HÀ NỘI</h1>
+                    <div class="thongtin-cty">
+                        <div class="local">
+                            <i class="fa-sharp fa-solid fa-location-dot"></i>
+                            <span class="dc">Tầng 1, tòa nhà Housinco Phùng Khoang, KDTM Phùng Khoang, P.Trung Văn, Q.Nam Từ Liêm, Hà Nội</span>
+                        </div>
+                        <div class="phone">
+                            <a href="#" class="p"><i class="sol fa-solid fa-phone"></i> (028) 7304 9998</a><br>
+                            <a href="#" class="p"><i class="sol fa-solid fa-phone"></i> 0916 434 429</a> - 
+                            <a href="#" class="p"><i class="sol fa-solid fa-envelope"></i> info@lemay.com.vn</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="cac-dieu-khoan">
+                <p>Giấy ĐKKD số 0303077611 do Sở KH&ĐT thành phố Hồ Chí Minh cấp ngày 25/9/2003</p>
+                <div class="chinh-sach">
+                        <a href="#">Chính sách bảo mật</a>  |   
+                        <a href="#">Chính sách vận chuyển</a>   |    
+                        <a href="#">Điều khoản</a>  |   
+                        <a href="#">Chính sách đổi trả hàng</a> |  
+                        <a href="#">Hướng dẫn mua hàng</a>  |   
+                        <a href="#">Chính sách thanh toán</a>
+                </div>
+            </div>
+        </div>
+        <hr width="100%" color="black" size="0.5px"/>
+        <section class="bd">
+            <div class="bk">
+                <div class="ban-quyen">© Bản quyền thuộc về Công ty TNHH SX TM DV Lê Mây | Cung cấp bởi Sapo</div>
+                <div class="pay-pal">
+                    <div></div>
+                    <div class="image">
+                        <img src="image/pay-ments1.webp"/>
+                        <img src="image/pay-ments2.webp"/>
+                        <img src="image/pay-ments3.webp"/>
+                        <img src="image/pay-ments4.webp"/>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script language="javascript" src="Page1.js"></script>
+    <script language="javascript">
+         function openshow(evt, spName){
+            var i, tabcontent, tab;
+            tabcontent=document.getElementsByClassName("sp1");
+            for(i=0; i<tabcontent.length; i++){
+                tabcontent[i].style.display="none";
+            }
+            tab=document.getElementsByClassName("dang");
+            for(i=0; i<tab.length; i++){
+                tab[i].className=tab[i].className.replace(" active", "");
+            }
+            document.getElementById(spName).style.display="block";
+            evt.currentTarget.className +=" active";
+        }
+          //Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+    <script>
+        console.log('%cDừng lại!', 'color: red; font-size: 50px; font-family: sans-serif; text-shadow: 1px 1px 5px #000;');
+        console.log('%cCó vẻ như bạn đang cố tình hack website của chúng tôi!', 'color: #444; font-size: 25px; font-family: sans-serif;');
+        console.log('%cTruy cập http://domain.com/selfxss để biết thêm thông tin chi tiết.', 'color: #444; font-size: 25px; font-family: sans-serif;');
+    </script>
+</body>
+</html>
